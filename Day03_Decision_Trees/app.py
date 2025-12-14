@@ -3,16 +3,14 @@ import pandas as pd
 import streamlit as st
 import os
 
-import os
-import pickle as pkl
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "heart_disease_model.pkl")
 
 with open(MODEL_PATH, "rb") as f:
     model = pkl.load(f)
-    
-st.title("Heart Disease Predictor")
+
+st.set_page_config(page_title="Heart Disease Predictor",page_icon="❤️", layout="wide")
+st.title("AI Cardiologist: Heart Disease Risk")
 st.write("Enter patient details below to get a prediction.")
 
 col1, col2 = st.columns(2)
