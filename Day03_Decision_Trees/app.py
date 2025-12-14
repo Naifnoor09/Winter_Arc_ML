@@ -3,8 +3,11 @@ import pandas as pd
 import streamlit as st
 import os
 
+import os
+import pickle as pkl
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "/Users/mdnaif/Desktop/Winter_Arc_ML/Day03_Decision_Trees/heart_disease_model.pkl")
+MODEL_PATH = os.path.join(BASE_DIR, "heart_disease_model.pkl")
 
 with open(MODEL_PATH, "rb") as f:
     model = pkl.load(f)
