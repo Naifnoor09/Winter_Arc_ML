@@ -1,8 +1,12 @@
 import pickle as pkl
 import pandas as pd
 import streamlit as st
+import os
 
-with open("/Users/mdnaif/Desktop/Winter_Arc_ML/Day03_Decision_Trees/heart_disease_model.pkl", "rb") as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "/Users/mdnaif/Desktop/Winter_Arc_ML/Day03_Decision_Trees/heart_disease_model.pkl")
+
+with open(MODEL_PATH, "rb") as f:
     model = pkl.load(f)
     
 st.title("Heart Disease Predictor")
